@@ -1,0 +1,16 @@
+.footer {
+  text-align: left;
+}
+button {
+  background-color: red;
+  color: white;
+  outline: none;
+  border-radius: 3px;
+  border: 1px solid red;
+  cursor: pointer;
+  position: relative;
+}
+button:active {
+  top: 1px;
+  left: 1px;
+}
