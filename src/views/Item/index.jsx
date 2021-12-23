@@ -3,7 +3,7 @@ import './index.css'
 
 const Item = props => {
   const { name, done, id, changeDone, deleteTodo } = props
-  const handleChange = (e) => {
+  const handleChange = e => {
     changeDone(id, e.target.checked)
   }
   const deleteItem = () => {

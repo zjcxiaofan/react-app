@@ -4,8 +4,8 @@ import "./index.css"
 
 const Footer = (props) => {
   const { todos, deleteAllDone, checkedAll } = props
-  const doneTodo = todos.filter((v) => v.done === true)
-  const done = doneTodo.length === todos.length
+  const doneTodo = todos.filter(v => v.done === true)
+  const done = doneTodo.length === todos.length && todos.length !== 0
   return (
     <div className='footer'>
       <input type='checkbox' checked={done} onChange={checkedAll} />

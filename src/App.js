@@ -48,6 +48,7 @@ export default class App extends Component {
     const { todos } = this.state
     return (
       <div className="app">
+        <h1>React Todo List</h1>
         <Header addTodo={this.addTodo} />
         <List todos={todos} changeDone={this.changeDone} deleteTodo={this.deleteTodo} />
         <Footer todos={todos} deleteAllDone={this.deleteAllDone} checkedAll={this.checkedAll} />

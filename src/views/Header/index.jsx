@@ -33,7 +33,7 @@ import './index.css'
 
 // 2.函数组件
 const Header = props => {
-  const handleKeyUp = (e) => {
+  const handleKeyUp = e => {
     if (e.keyCode === 13 && e.target.value.trim()) {
       const obj = {
         name: e.target.value,
