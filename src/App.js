@@ -19,11 +19,8 @@ export default class App extends Component {
   changeDone = (id, done) => {
     const { todos } = this.state
     const newTodos = todos.map(v => {
-      if (v.id === id) {
-        return { ...v, done }
-      } else {
-        return v
-      }
+      if (v.id === id) return { ...v, done }
+      else return v
     })
     this.setState({ todos: newTodos })
   }
