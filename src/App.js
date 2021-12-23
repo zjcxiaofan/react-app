@@ -16,7 +16,6 @@ export default class App extends Component {
     const newTodos = [val, ...todos]
     this.setState({ todos: newTodos })
   }
-
   changeDone = (id, done) => {
     const { todos } = this.state
     const newTodos = todos.map(v => {
@@ -28,26 +27,30 @@ export default class App extends Component {
     })
     this.setState({ todos: newTodos })
   }
-
   deleteTodo = id => {
     const { todos } = this.state
     const newTodos = todos.filter(v => v.id !== id)
     this.setState({ todos: newTodos })
   }
-
   deleteAllDone = () => {
     const { todos } = this.state
     const newTodos = todos.filter(v => !v.done)
     this.setState({ todos: newTodos })
   }
-
+  checkedAll = e => {
+    const { todos } = this.state
+    const newTodos = todos.map(v => {
+      return { ...v, done: e.target.checked }
+    })
+    this.setState({ todos: newTodos })
+  }
   render() {
     const { todos } = this.state
     return (
       <div className="app">
         <Header addTodo={this.addTodo} />
         <List todos={todos} changeDone={this.changeDone} deleteTodo={this.deleteTodo} />
-        <Footer todos={todos} deleteAllDone={this.deleteAllDone} />
+        <Footer todos={todos} deleteAllDone={this.deleteAllDone} checkedAll={this.checkedAll} />
       </div>
     )
   }

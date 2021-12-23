@@ -11,7 +11,7 @@ const Item = props => {
   }
   return (
     <li className='item'>
-      <input type="checkbox" defaultChecked={done} onChange={handleChange} />
+      <input type="checkbox" checked={done} onChange={handleChange} />
       <span> {name}</span>
       <button className='btn' style={{ float: 'right' }} onClick={deleteItem}>删除</button>
     </li>
